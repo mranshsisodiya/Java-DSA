@@ -8,7 +8,7 @@ public class LargestElement{
             arr[i]=sc.nextInt();
         }
         //brute force sol
-        //sort the array and print the last element; time complexity will be O(n^2) due to the sort method
+        //sort the array and print the last element; time complexity will be O(nlogn) due to the sort method
         //we will copy the original array to a new rry to compare the solution of brute force, optimized sol.
         //soo don't think this is taking an extra of O(n) its just for comparison based for understanding
         int arrbrute[]=new int[size];
@@ -19,6 +19,6 @@ public class LargestElement{
         Arrays.sort(arrbrute);
         System.out.println(arrbrute[arrbrute.length-1]);
 
-        
+
     }
 }

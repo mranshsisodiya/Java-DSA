@@ -52,5 +52,21 @@ public class SecondLargest{
         System.out.println(second_better);
         //time complexity is O(n)
 
+        //optimal solution
+        int largest_optimal=arr[0];
+        int second_optimal=Integer.MIN_VALUE;
+        //check if the number is array is greater than largest we assumed and if a number is largest the assumed value becomes second largest
+        //and there can be case where number is not greater than largest but it is greater than second largest
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>largest_optimal){
+                second_optimal=largest_optimal;
+                largest_optimal=arr[i];
+            } else if (arr[i] < largest_optimal && arr[i]>second_optimal) {
+                second_optimal = arr[i];
+            }
+        }
+        System.out.println(second_optimal);
+        //here also time complexity is O(n) but in this we only require 1 for loop soo a sightly optimal solution
+
     }
 }

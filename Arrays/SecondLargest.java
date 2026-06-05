@@ -18,7 +18,7 @@ public class SecondLargest{
             arrbrute[i]=arr[i];
         }
         Arrays.sort(arrbrute);
-        int second=-1;//for empty array and if the hole array has just 1 number
+        int second=Integer.MIN_VALUE;//for empty array and if the hole array has just 1 number it also handles -ve numbers
         for(int i=arrbrute.length-2;i>=0;i--){
             if(arrbrute[i] !=arrbrute[arrbrute.length-1]){
                 second=arrbrute[i];
@@ -28,6 +28,29 @@ public class SecondLargest{
         System.out.println(second);
         //time complexity will be O(nlogn) due to sorting
 
-        
+
+        //better solution
+        //let us first find the largest element
+        int arrbetter[]=new int[size];
+        for(int i=0;i<arr.length;i++){
+            arrbetter[i]=arr[i];
+        }
+        int largest=arrbetter[0];
+        for(int i=1;i<arrbetter.length;i++){
+            if(arrbetter[i]>largest){
+                largest=arrbetter[i];
+            }
+        }
+        //now take second largest element as int min and check if any number it greater then the assumed second largest
+        //and also check if the number in the array is not same as largest soo this will avoid the same number issue
+        int second_better=Integer.MIN_VALUE;
+        for(int i=0;i<arrbetter.length;i++){
+            if(arrbetter[i]>second_better && arrbetter[i]!=largest){
+                second_better=arrbetter[i];
+            }
+        }
+        System.out.println(second_better);
+        //time complexity is O(n)
+
     }
 }

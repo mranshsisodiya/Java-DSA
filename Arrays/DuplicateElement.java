@@ -25,6 +25,17 @@ public class DuplicateElement{
         }
         System.out.println(j);
         //here the time complexity is O(n) but we created an extra array soo space complexity is O(n)
-        
+
+        //optimal solution
+        //we can use 2 pointer approach in order to avoid the extra space we are consuming
+        int x=0;
+        for(int y=1;y<size;y++){
+            if(arr[y]!=arr[x]){
+                arr[++x]=arr[y];
+            }
+        }
+        System.out.println(x+1); //since array is 0 based indexed soo we return by adding one
+        //now here the time complexity is same as brute force that is O(n)
+        //but we avoided the extra space soo space complexity is O(1)
     }
 }

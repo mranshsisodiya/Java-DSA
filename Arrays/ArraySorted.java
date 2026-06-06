@@ -27,6 +27,21 @@ public class ArraySorted{
         }else{
             System.out.println("Not Sorted");
         }
-        
+        //optimal method
+        //check if the first element is smaller than second number and do this till last element
+        int flag=0;
+        for(int i=1;i<arr.length;i++){
+            if (arr[i] < arr[i - 1]) {
+                flag = 1;
+                break;
+            }
+        }
+        if(flag==1){
+            System.out.println("Not sorted");
+        }else{
+            System.out.println("Sorted");
+        }
+        //here the time complexity is O(n)
+
     }
 }

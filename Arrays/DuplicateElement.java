@@ -37,5 +37,22 @@ public class DuplicateElement{
         System.out.println(x+1); //since array is 0 based indexed soo we return by adding one
         //now here the time complexity is same as brute force that is O(n)
         //but we avoided the extra space soo space complexity is O(1)
+
+        //HFT company optimized solution
+        //avoid empty array
+        if(arr==null || arr.length==0){
+            System.out.println(0);
+        }else{
+            int k=0;
+            for(int i=1;i<arr.length;i++){
+                if(arr[k]!=arr[i]){
+                    k++;
+                    if(k!=i){  //this condition avoids the case for unnecessary write operation which avoid cpu load
+                        arr[k]=arr[i];
+                    }
+                }
+            }
+            System.out.println(k+1);
+        }
     }
 }

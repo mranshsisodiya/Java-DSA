@@ -1,3 +1,5 @@
+package Arrays;
+
 import java.util.*;
 public class MissingNumber {
     public static void main(String[] args){

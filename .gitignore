@@ -3,3 +3,5 @@
 out/
 *.iml
 out/
+.obsidian/
+java_basics/

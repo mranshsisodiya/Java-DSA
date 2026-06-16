@@ -57,7 +57,7 @@ public class UnionOfSortedArray{
 
         //OPTIMAL SOLUTION
         //by using 2 pointers we will linearly traverse whole sorted array and add unique elements in sorted way
-        //tc=O(n+m) and sc=O(1)
+        //tc=O(n+m) and sc=O(n+m)
         List<Integer> union=new ArrayList<>();
         int i=0, j=0;
         while(i<size1 && j<size2){
